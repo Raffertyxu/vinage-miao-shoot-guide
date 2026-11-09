@@ -25,3 +25,44 @@
 .film-look{display:grid;grid-template-columns:minmax(0,240px) minmax(0,1fr);gap:30px;align-items:center;background:var(--cream);margin:30px 0 4px;max-width:850px}.film-look img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}.film-look>div{padding:24px 30px 24px 0}.film-look h3{font-size:1.35rem;margin:10px 0}.film-look p:not(.overline){color:var(--muted);font-size:.92rem}.film-look .film-look-note{margin-top:12px}.film-look a{display:inline-block;margin-top:15px;font-weight:700;font-size:.82rem;text-underline-offset:4px}@media(max-width:600px){.film-look{grid-template-columns:minmax(0,1fr);gap:0}.film-look img{aspect-ratio:4/3;object-position:center 35%}.film-look>div{padding:22px}}
 
 .block-edit{font-size:.85rem;color:var(--muted);margin-top:12px;padding:12px 14px;background:var(--cream);border-left:2px solid var(--line)}.block-edit strong{color:var(--ink)}
+/* v2 */
+.block-step .v2-tag,.v2-tag{display:inline-block;margin:0 0 8px;padding:3px 10px;border-radius:999px;background:var(--lime);color:var(--ink);font-size:.7rem;font-weight:700;letter-spacing:.06em}
+.v2-notes{margin:0 0 24px;padding:14px 18px;border:1px solid var(--line);border-radius:10px;background:var(--cream);font-size:.9rem;line-height:1.7;color:var(--ink)}
+.v2-notes summary{cursor:pointer;font-weight:700;color:var(--forest)}
+.v2-notes ul{margin:10px 0 0;padding-left:1.2em}
+.v2-notes li+li{margin-top:6px}
+.block-step .v2-tag{align-self:flex-start;border-radius:12px;line-height:1.5}
+/* 兩個畫面之間的「直接切」標示與切換效果 */
+.blocking-picture{position:relative}
+.cut-flag{display:none;position:absolute;left:12px;top:12px;z-index:2;background:#e8bb85;color:#211c1a;font-weight:700;font-size:.78rem;letter-spacing:.06em;padding:6px 12px;border-radius:999px;box-shadow:0 2px 8px #0006}
+.blocking-picture[data-cut="in"] .cut-flag,.blocking-picture[data-cut="jump"] .cut-flag{display:block}
+.blocking-picture[data-cut="jump"] .cut-flag{background:rgba(33,28,26,.85);color:#e8bb85;border:1px solid #e8bb85;box-shadow:none}
+.blocking-picture.cut-flash::after{content:"";position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;animation:cut-flash .24s ease-out}
+@keyframes cut-flash{0%{opacity:.9}100%{opacity:0}}
+.cut-hint{color:#e8bb85!important;font-weight:700}
+.cut-marker{display:flex;gap:14px;align-items:flex-start;margin:0;padding:18px 20px;background:#211c1a;color:#fff8f1;border-left:4px solid #e8bb85}
+.cut-badge{flex:none;background:#e8bb85;color:#211c1a;font-weight:700;font-size:.8rem;letter-spacing:.06em;padding:6px 12px;border-radius:999px;white-space:nowrap}
+.cut-marker strong{display:block;font-size:1rem;line-height:1.6}
+.cut-note{display:block;font-size:.85rem;color:#ddc7b3;margin-top:4px;line-height:1.7}
+.cut-gag{display:inline-block;margin-top:10px;padding:3px 10px;border:1px solid #e8bb85;border-radius:12px;color:#e8bb85;font-size:.75rem;font-weight:700;letter-spacing:.06em}
+.cut-marker.gag{border-left-color:#ba5a36;background:#2b1f1b}
+.cut-chip{align-self:flex-start;margin:6px 0 2px;padding:3px 10px;border:1px dashed var(--rust);border-radius:12px;color:var(--rust);font-size:.78rem;font-weight:700;line-height:1.5}
+@media(max-width:700px){.cut-marker{flex-direction:column;gap:10px}}
+@media(prefers-reduced-motion:reduce){.blocking-picture.cut-flash::after{animation:none}}
+/* 中等寬度也要有左右留白（原本 801 到 1240px 之間內容會貼邊） */
+@media(min-width:801px){main>section,.script-intro{max-width:1240px;padding-left:36px;padding-right:36px}}
+/* 動態分鏡預演片 */
+.v2-animatic{margin:26px 0;padding:18px 20px;border:1px solid var(--line);border-radius:10px;background:var(--cream)}
+.v2-animatic h3{margin:4px 0 8px}
+.v2-animatic p{margin:0 0 12px;line-height:1.8}
+.v2-animatic video{display:block;width:100%;aspect-ratio:1344/768;max-height:72vh;object-fit:contain;background:#111;border-radius:6px}
+.animatic-shots{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 4px}
+.animatic-shots button{font:inherit;font-size:.82rem;line-height:1.3;padding:7px 11px;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink);cursor:pointer}
+.animatic-shots button b{margin-right:5px;color:var(--rust)}
+.animatic-shots button.on{background:var(--forest);border-color:var(--forest);color:var(--paper)}
+.animatic-shots button.on b{color:var(--lime)}
+.animatic-diff{margin-top:10px;font-size:.88rem;line-height:1.75}
+.animatic-diff summary{cursor:pointer;font-weight:700;color:var(--forest)}
+.animatic-diff ul{margin:8px 0 0;padding-left:1.2em}
+.animatic-diff li+li{margin-top:5px}
+@media(max-width:700px){.v2-animatic{padding:14px}}
