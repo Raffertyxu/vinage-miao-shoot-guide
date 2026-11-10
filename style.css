@@ -66,3 +66,6 @@
 .animatic-diff ul{margin:8px 0 0;padding-left:1.2em}
 .animatic-diff li+li{margin-top:5px}
 @media(max-width:700px){.v2-animatic{padding:14px}}
+/* 影片一參考影片：直式 9:16，寬度收在手機畫面裡 */
+.v2-animatic.film-reference{max-width:440px}
+.v2-animatic.film-reference video{display:block;width:min(100%,calc(78svh * 9 / 16));max-width:100%;aspect-ratio:9/16;height:auto;max-height:78svh;object-fit:contain;background:#111;border-radius:6px}
