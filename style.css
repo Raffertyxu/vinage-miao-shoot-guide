@@ -69,3 +69,22 @@
 /* 影片一參考影片：直式 9:16，寬度收在手機畫面裡 */
 .v2-animatic.film-reference{max-width:440px}
 .v2-animatic.film-reference video{display:block;width:min(100%,calc(78svh * 9 / 16));max-width:100%;aspect-ratio:9/16;height:auto;max-height:78svh;object-fit:contain;background:#111;border-radius:6px}
+
+/* Shooting order: preserve the existing film cards and panels. */
+.film-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}
+.film-tabs>[role="tab"]{min-width:0;overflow-wrap:anywhere}
+.shoot-order{max-width:960px;margin:28px auto 0}.shoot-order>h2{margin-bottom:20px}
+.order-checks{padding:20px 24px;background:var(--cream);border:1px solid var(--line)}
+.order-checks h3{font-size:1rem}.order-checks ul{margin:8px 0 0;padding-left:1.3em}
+.order-section{margin-top:32px}.order-section h3{font-size:1.35rem;color:var(--forest)}
+.order-look{font-weight:700;margin-top:8px}.order-note{color:var(--muted);margin:8px 0 14px}
+.order-change{padding:12px 16px;border-left:4px solid #a94f36;background:var(--cream);color:var(--ink);font-weight:700}
+.order-list{list-style:none;margin:0;padding:0}.order-list li{display:grid;grid-template-columns:42px minmax(0,1fr);gap:14px;padding:17px 0;border-bottom:1px solid var(--line)}
+.order-number{font-variant-numeric:tabular-nums;font-weight:700;color:var(--muted);font-size:1.1rem}
+.order-badge{display:inline-block;padding:2px 9px;color:#fff3de;font-size:.7rem;font-weight:700;letter-spacing:.05em;border-radius:3px}
+.order-film1{background:#a94f36}.order-film2{background:#193f33}
+.order-shot{display:block;font-weight:700;margin:6px 0;text-underline-offset:4px;overflow-wrap:anywhere}
+.order-list p{font-size:.9rem;color:var(--muted)}
+.block-step[id^="shot-"]{scroll-margin-top:24px}
+.order-shot:focus-visible{outline:2px solid var(--forest);outline-offset:4px}
+@media(max-width:600px){.film-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.film-tabs #tab-order{grid-column:1/-1}.order-checks{padding:16px}.order-list li{grid-template-columns:30px minmax(0,1fr);gap:10px}.order-section h3{font-size:1.15rem}}
